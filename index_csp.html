@@ -1,6 +1,7 @@
 <html>
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+	<script src="./index_csp.js">
   </head>
   	<body> 
 	  	<!-- <h1> 1. Reflected XSS </h1>	
@@ -15,20 +16,12 @@
 	  	<i> input field -> dom innerHTML </i><br>
 	  	<input type=text width=20 id=source1><br>
 	  	<p> You typed: <span id=sink1></span></p>
-	  	<script>
-	  		document.getElementById('source1').addEventListener('input', (e)=>{
-	  			document.getElementById('sink1').innerHTML=e.target.value;
-	  		})
-	  	</script>
+	  	<script></script>
 
 
 	  	<h1> 3. postMessage DOM XSS </h1>
 	  	<i> postmessage -> dom element innerHTML </i><br>
 	  	<p> Message received: <span id=sink2></span></p>
-	  	<script>
-	  		window.addEventListener('message', (e)=>{
-	  			document.getElementById('sink2').innerHTML=e.data;
-	  		})
-	  	</script>
+	  	<script></script>
 	</body>
   	</html>
